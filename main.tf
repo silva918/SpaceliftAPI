@@ -150,6 +150,6 @@ locals{
 }
 
 
-output "base_url" {
+output "API_Gateway_endpoint_url" {
   value = "${local.webhookDest_path_2}${local.webhookDest_path_1}"
 }
