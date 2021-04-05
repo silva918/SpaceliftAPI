@@ -36,5 +36,6 @@ To test:
   - You should see all of the information unmodified in a dynamoDB table named 'myDB' if no changes have been made to the defaults
  
  
- Writted by Michael Silva 
- Last edited April 5, 2021
+ - Written by Michael Silva 
+ 
+ - Last edited April 5, 2021
