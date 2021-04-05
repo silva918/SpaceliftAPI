@@ -26,7 +26,8 @@ How to use with Spacelift:
   - 'Integrations'
   - Click 'edit'
   - Choose 'Add Webhook' from 'Select integration set up' dropdown list
-  - Insert the output from the terraform apply labeled "API_Gateway_endpoint_url"
+  - Insert the output from the terraform apply labeled "API_Gateway_endpoint_url" into "Endpoint"
+  - Insert the output from ter terraform apply labeled "secretKey" into 'Secret'
   - Click 'Save'
 
 To test:
@@ -34,8 +35,9 @@ To test:
   - After confirmation that the terraform apply has completed
   - Go back to your stack and trigger an event
   - You should see all of the information unmodified in a dynamoDB table named 'myDB' if no changes have been made to the defaults
- 
- 
- - Written by Michael Silva 
- 
+
+ //
+
+ - Written by Michael Silva
+
  - Last edited April 5, 2021
