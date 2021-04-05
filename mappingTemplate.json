@@ -1,0 +1,74 @@
+{
+    "TableName": "myDB",
+        "Item":{
+        "eventID": {
+                "S": "$context.requestTime"
+                },
+            "account": {
+                "S": "$input.path('$.account')"
+                },
+            "state": {
+                "S": "$input.path('$.state')"
+                },
+            "stateVersion": {
+                "S": "$input.path('$.stateVersion')"
+                },
+            "timestamp": {
+                "S": "$input.path('$.timestamp')"
+                },
+            "runID": {
+                "S": "$input.path('$.run.id')"
+                },
+            "runBranch": {
+                "S": "$input.path('$.run.branch')"
+                },
+            "runAuthorLogin": {
+                "S": "$input.path('$.run.commit.authorLogin')"
+                },
+            "runAuthorName": {
+                "S": "$input.path('$.run.commit.authorName')"
+                },
+            "commitHash": {
+                "S": "$input.path('$.run.commit.hash')"
+                },
+            "commitMessage": {
+                "S": "$input.path('$.run.commit.message')"
+                },
+            "commitTimestamp": {
+                "S": "$input.path('$.run.commit.timestamp')"
+                },
+            "commitUrl": {
+                "S": "$input.path('$.run.commit.url')"
+                },
+            "createdAt": {
+                "S": "$input.path('$.run.createdAt')"
+                },
+            "deltaAdded": {
+                "S": "$input.path('$.run.delta.added')"
+                },
+            "deltaChanged": {
+                "S": "$input.path('$.run.delta.changed')"
+                },
+            "deltaDeleted": {
+                "S": "$input.path('$.run.delta.deleted')"
+                },
+            "deltaResources": {
+                "S": "$input.path('$.run.delta.resources')"
+                },
+            "triggeredBy": {
+                "S": "$input.path('$.run.triggeredBy')"
+                },
+            "runType": {
+                "S": "$input.path('$.run.type')"
+                },
+            "stackID": {
+                "S": "$input.path('$.stack.id')"
+                },
+            "stackName": {
+                "S": "$input.path('$.stack.name')"
+                },
+            "stackDescription": {
+                "S": "$input.path('$.stack.description')"
+                }
+    }
+}
