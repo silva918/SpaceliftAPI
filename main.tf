@@ -39,10 +39,6 @@ data "aws_caller_identity" "current" {}
 
 data "aws_region" "current" {}
 
-output "account_id_output" {
-  value = data.aws_caller_identity.current.account_id
-}
-
 locals {
   account_id = data.aws_caller_identity.current.account_id
 }
@@ -100,6 +96,13 @@ resource "aws_api_gateway_method" "Method" {
    authorization = "NONE"
 }
 
+resource "aws_api_gateway_request_validator" "secretKey" {
+  name                        = "secretKey"
+  rest_api_id                 = aws_api_gateway_rest_api.SpaceliftEventsAPI.id
+  validate_request_body       = false
+  validate_request_parameters = true
+}
+
 
 resource "aws_api_gateway_integration" "dynamoPutItem" {
    rest_api_id = aws_api_gateway_rest_api.SpaceliftEventsAPI.id
@@ -152,4 +155,8 @@ locals{
 
 output "API_Gateway_endpoint_url" {
   value = "${local.webhookDest_path_2}${local.webhookDest_path_1}"
+}
+
+output "API_Gateway_secret" {
+  value = aws_api_gateway_request_validator.secretKey.id
 }
